@@ -1,0 +1,18 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="px-4 my-2">
+    <h1 class="font-weight-bolder text-center text-white" *ngIf="!found">No Resources found!</h1>
+<div class="row" *ngIf="found">
+    <div *ngFor="let item of allData" class="col-md-2 overflow-hidden">
+        <div class="poster position-relative overflow-hidden">
+            <img class="h-100 w-100" src="https://image.tmdb.org/t/p/original/{{item?.poster_path}}" alt="">
+        <div class="layer ">
+        <a class=" bg-transparent" routerLink="/details/{{item.media_type}}/{{item.id}}"><i class="fa text-black-50 fa-3x fa-play-circle" aria-hidden="true"></i>
+     </a>
+     <p class="text-dark font-weight-bolder">See more!</p>
+     </div>
+     <div class="type bg-primary position-absolute p-2">{{item.media_type}}</div>
+         </div>
+         <h5 class="text-center mt-2">{{item.name}}{{item.original_title}}</h5>
+    </div>
+</div>
+</div>

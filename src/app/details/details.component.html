@@ -1,0 +1,23 @@
+<div class="row" *ngIf="showRow">
+<div class="col-md-12 my-md-2 mx-0 d-flex justify-content-center">
+    <iframe [src]="videoURL(videoSrc)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<div class="px-2 mx-0"><div class="row">
+    <div class="col-md-12 d-flex justify-content-start">
+        <div>
+         <h2 class="mt-3">{{media}} name: {{itemDetails.name}}{{itemDetails.original_title}}</h2>
+          <h4>{{itemDetails.tagline}}</h4>
+         
+         <h3 *ngIf="showGenre">Genres :</h3>
+         <button *ngFor="let genre of itemDetails.genres" class="btn btn-info my-3 mx-3">{{genre.name}}</button>
+          <h5 class="my-3">Vote: {{itemDetails.vote_average}}</h5>
+          <h5 class="my-3">Vote count: {{itemDetails.vote_count}}</h5>
+          <h5 class="my-3">Popularity: {{itemDetails.popularity}}</h5>
+          <h5 class="my-3">release date: {{itemDetails.release_date}}{{itemDetails.first_air_date}}</h5>
+          <h3>Overview</h3>
+          <h5 class="my-3">{{itemDetails.overview}}</h5>
+ 
+        </div>
+    </div>
+ </div></div>

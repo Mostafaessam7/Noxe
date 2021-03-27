@@ -1,0 +1,18 @@
+@import "../../styles.scss";
+*{
+  overflow-x: hidden;
+}
+iframe{
+  
+    height:65vh;
+    width: 65vw;
+}
+h4{
+  color: $secondFontColor;
+}
+@media screen and (max-width:700px){
+  iframe{
+    height:42vh;
+    width: 100% ;
+}
+}

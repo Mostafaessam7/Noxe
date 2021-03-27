@@ -1,0 +1,26 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+<div class="px-4 my-2">
+    <h1 class="text-center my-3">Celebrities</h1>
+<div class="row">
+    <div *ngFor="let item of people" class="col-md-2 my-3">
+        <div class="poster position-relative overflow-hidden">
+            <img class="w-100 mb-2" src="https://image.tmdb.org/t/p/original/{{item?.profile_path}}" alt="">
+            <div class="layer">
+                <a class=" bg-transparent" routerLink="/person/{{item.id}}"><i class="fa text-dark fa-3x fa-play-circle" aria-hidden="true"></i>
+             </a>
+             <p class="text-dark font-weight-bolder">See more!</p>
+             </div>
+        </div>
+        <h5 class="text-center">{{item.name}}</h5>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col-md-12 d-flex justify-content-center align-content-center">
+        <a  routerLink="/people/{{page}}" ><button *ngIf="disablePrev" (click)="Prev()" class="bg-transparent border-0"><i class="fa fa-3x fa-arrow-circle-left text-white" aria-hidden="true"></i></button></a> 
+        <div class="mx-3 mt-2"><h3 class="font-weight-bolder">{{page}}</h3></div>
+                <a routerLink="/people//{{page}}" ><button *ngIf="disableNext" (click)="Next()" class="bg-transparent border-0"><i class="fa fa-3x fa-arrow-circle-right text-white" aria-hidden="true"></i></button></a> 
+
+            </div>
+</div>
+</div>

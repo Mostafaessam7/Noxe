@@ -1,0 +1,52 @@
+<ngx-spinner bdColor ="rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="px-4 my-2">
+    <div class="row">
+        <div class="col-md-4">
+        <div>
+             <div class="Border w-25"></div>
+             <h3>Trending</h3>
+             <h3>Movies</h3>
+             <h3>To watch now</h3>
+             <p class="different">Most watched movies by days</p>
+             <div class="Border w-100"></div>
+    
+        </div>
+        </div>
+        <div *ngFor="let item of trendingMovies" class="col-md-2 overflow-hidden">
+            <div class="poster position-relative overflow-hidden">
+                <img class="w-100" src="https://image.tmdb.org/t/p/original/{{item?.poster_path}}" alt="">
+            <div class="layer">
+            <a class=" bg-transparent" routerLink="/details/movie/{{item.id}}"><i class="fa text-dark fa-3x fa-play-circle" aria-hidden="true"></i>
+         </a>
+         <p class="text-dark font-weight-bolder">See more!</p>
+         </div>
+             </div>
+             <h5 class="text-center mt-2">{{item.original_title}}</h5>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-md-4 d">
+            <div>
+                 <div class="Border w-25"></div>
+                 <h3>Trending</h3>
+                 <h3>Tv shows</h3>
+                 <h3>To watch now</h3>
+                 <p class="different">Most watched tv shows by days</p>
+                 <div class="Border w-100"></div>
+        
+            </div>
+            </div>
+           <div *ngFor="let item of trendingShows" class="col-md-2 overflow-hidden">
+               <div class="poster position-relative overflow-hidden">
+                   <img class="w-100" src="https://image.tmdb.org/t/p/original/{{item?.poster_path}}" alt="">
+               <div class="layer ">
+               <a class=" bg-transparent" routerLink="/details/tv/{{item.id}}"><i class="fa text-dark fa-3x fa-play-circle" aria-hidden="true"></i>
+            </a>
+            <p class="text-dark font-weight-bolder">See more!</p>
+            </div>
+                </div>
+                <h5 class="text-center mt-2">{{item.name}}</h5>
+           </div>
+    </div>
+</div>

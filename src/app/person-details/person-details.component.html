@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-12 my-md-2 mx-0  d-flex justify-content-center">
+        <img class="img-fluid w-25" [src]="profileSrc" alt="">
+    </div>
+</div>
+<div class="px-2">
+    <h2 class="my-3">Name: {{personData.name}}</h2>
+   <h3 class="my-3">Biography:</h3>
+   <p>{{personData.biography}}</p>
+   <h5 class="my-5">Date of birth: {{personData.birthday}} </h5>
+</div>
+<h1 class="my-2 px-2">Known For:</h1>
+<div class="row mx-5 ">
+    <div *ngFor="let item of knownFor.slice(0,6)" class="col-md-2 my-3">
+        <div class="position-relative overflow-hidden">
+            <img class="w-100 mb-2" src="https://image.tmdb.org/t/p/original/{{item?.poster_path}}" alt="">
+            <h5 class="text-center">{{item.name}}{{item.original_title}}</h5>
+
+        </div>
+    </div>
+</div>
